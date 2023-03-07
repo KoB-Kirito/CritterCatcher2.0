@@ -1,6 +1,6 @@
 ;en;fr;tr;de
-KEY_PLAY;Play;Jouer;Oyna;Play
-KEY_CREDITS;Credits;Credits;Ekip;
+KEY_PLAY;Play;Jouer;Oyna;Spiel
+KEY_CREDITS;Credits;Credits;Ekip;Credits
 KEY_ART;2D Art;Art 2D;Art 2D;2D Art
 KEY_GAMEDESIGN;Game Design;Design du jeu;Game Design;Spieldesign
 KEY_SOUNDDESIGN;Sound Design;Sons et musiques;Sound Design;Sounddesign
@@ -8,7 +8,7 @@ KEY_PROGRAMMING;Programming;Programmation;Development;Programmierung
 KEY_SPACEBAR;Space;Espace;Space;Leertaste
 KEY_PRESSURE;Pressure;Pression;Basinc;Druck
 KEY_FONT;Font by TheHungryJPEG;Police par TheHungryJPEG;Font by TheHungryJPEG;Schriftart von TheHungryJPEG
-KEY_INSTRUCTIONS;Stun and collect the fishes;Etourdi et recupere les poissons;Baliklari sersemlet ve sonra topla;Stelle Fische ruhig und sammle sie
+KEY_INSTRUCTIONS;Stun and collect the fishes;Etourdi et recupere les poissons;Baliklari sersemlet ve sonra topla;Sammle alle Fische
 KEY_RETRY;Press R to retry;Appuyez sur R pour reessayer;Tekrar oynamak icin R'ye bas; R zum Neu starten
 
 KEY_CAPTURE_1;I have you now;Je t'ai maintenant;Simdi seni yakaladim

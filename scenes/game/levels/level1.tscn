@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://m734u7l8e77m"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="TileSet" uid="uid://bilyhjk0ng7ce" path="res://scenes/game/levels/tilesets/cave.tres" id="1_rdxa2"]
 [ext_resource type="PackedScene" uid="uid://bkbmu2ssf5imj" path="res://scenes/game/player/player.tscn" id="2_4hdl7"]
 [ext_resource type="PackedScene" uid="uid://dsqommrhh77n4" path="res://scenes/game/AI/Fish.tscn" id="3_1cw7a"]
-[ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/net.tscn" id="3_fnece"]
+[ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/harpoon.tscn" id="3_fnece"]
 [ext_resource type="PackedScene" uid="uid://d0wbplslbcc4d" path="res://scenes/game/AI/AIMovNode.tscn" id="3_q0x0o"]
 [ext_resource type="Script" path="res://scripts/node_manager.gd" id="4_h6lwk"]
 [ext_resource type="PackedScene" uid="uid://d3gu115ki4jis" path="res://scenes/game/levels/background.tscn" id="7_l554n"]

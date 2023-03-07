@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqnbj6063vbd7"]
+
+[ext_resource type="Script" path="res://scripts/harpoon_launcher.gd" id="1_3hvfl"]
+[ext_resource type="PackedScene" uid="uid://4jl3gyoi68ex" path="res://scenes/game/player/harpoon.tscn" id="2_cea5w"]
+[ext_resource type="AudioStream" uid="uid://dwlphk1ryt2rb" path="res://assets/audio/shooting.mp3" id="2_fcxrr"]
+
+[node name="HarpoonLauncher" type="Node2D"]
+script = ExtResource("1_3hvfl")
+projectileScene = ExtResource("2_cea5w")
+
+[node name="snd_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_fcxrr")
+volume_db = 15.0
+
+[node name="CooldownTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

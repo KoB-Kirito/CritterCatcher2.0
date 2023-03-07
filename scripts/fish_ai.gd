@@ -5,7 +5,7 @@ class_name Fish
 enum Behavior { BEHAV_IDLE, BEHAV_PATROL, BEHAV_CHASE }
 enum FishType { CUTTLEFISH, ISOPOD, NAUTILUS, RAY, ANEMONE  }
 
-var doesDamage = [ false, false, false, true, false ]
+var doesDamage = [ true, true, true, true, true ]
 var behaviorList = [ Behavior.BEHAV_CHASE, Behavior.BEHAV_IDLE, Behavior.BEHAV_PATROL, Behavior.BEHAV_CHASE, Behavior.BEHAV_IDLE ]
 
 @export var Type: FishType
@@ -79,7 +79,7 @@ func _ready():
 
 	get_closest_node(global_position)
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	if !can_move || stun_timer > 0.0:
 		return
 

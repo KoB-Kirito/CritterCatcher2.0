@@ -2,9 +2,8 @@ extends Node
 
 var fullscreen: bool = false
 
-func _process(delta):
-	if Input.is_action_just_released("fullscreen"):
-		print("fullscreen pressed")
+func _process(_delta):
+	if Input.is_action_just_pressed("fullscreen"):
 		if not fullscreen:
 			fullscreen = true
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

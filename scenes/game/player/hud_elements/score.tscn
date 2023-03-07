@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxagrql4xd04t"]
+
+[ext_resource type="Script" path="res://scripts/score.gd" id="1_ayh8f"]
+
+[node name="Score" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+script = ExtResource("1_ayh8f")
+
+[node name="Text" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "score"

@@ -1,20 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkbmu2ssf5imj"]
+[gd_scene load_steps=10 format=3 uid="uid://c6mhnfplsrfod"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fdpge"]
 [ext_resource type="Texture2D" uid="uid://d2nbbmxoo0vkf" path="res://assets/textures/sprites/submarine_animated.PNG" id="2_fqad5"]
-[ext_resource type="PackedScene" uid="uid://cq5kl76o2r0gx" path="res://scenes/game/player/net.tscn" id="2_gu1ti"]
-[ext_resource type="AudioStream" uid="uid://dwlphk1ryt2rb" path="res://assets/audio/shooting.mp3" id="2_xxu1u"]
 [ext_resource type="Texture2D" uid="uid://btvphj3a2mymt" path="res://assets/textures/sprites/submarine_broken.PNG" id="3_sli4i"]
 [ext_resource type="PackedScene" uid="uid://c4kijmqp8bswt" path="res://scenes/game/player/hud.tscn" id="3_v4mv5"]
 [ext_resource type="FontFile" uid="uid://cusgwbl28ojla" path="res://assets/fonts/Sweets Smile.ttf" id="5_nuc0t"]
 [ext_resource type="AudioStream" uid="uid://dhsqg5rqa7eay" path="res://assets/audio/collision.mp3" id="8_77ljf"]
+[ext_resource type="PackedScene" uid="uid://dqnbj6063vbd7" path="res://scenes/game/player/harpoon_launcher.tscn" id="8_81mnv"]
 [ext_resource type="AudioStream" uid="uid://bij6r0bo6j2iy" path="res://assets/audio/shot_at.mp3" id="9_alpui"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i4x3y"]
 friction = 0.0
 bounce = 1.0
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("shootAudioPlayer", "collisionAudioPlayer", "damageAudioPlayer") groups=["player"]]
+[node name="Player" type="RigidBody2D" groups=["player"]]
 collision_mask = 3
 inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_i4x3y")
@@ -24,10 +23,6 @@ max_contacts_reported = 10
 contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_fdpge")
-net = ExtResource("2_gu1ti")
-shootAudioPlayer = NodePath("ShootAudioPlayer")
-collisionAudioPlayer = NodePath("BumpAudioPlayer")
-damageAudioPlayer = NodePath("DamageAudioPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -54,26 +49,26 @@ text = "KEY_RETRY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Hud" parent="." instance=ExtResource("3_v4mv5")]
-
-[node name="ShootAudioPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_xxu1u")
-volume_db = 15.0
-
-[node name="BumpAudioPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_77ljf")
-volume_db = 15.0
-
-[node name="DamageAudioPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_alpui")
-volume_db = 15.0
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -14, -19, -11, -24, -19, -29, -19, -30, -14, -36, -14, -36, -9, -32, -6, -36, -2, -32, 3, -25, -1, -22, 5, -7, 14, 11, 18, 20, 18, 24, 13, 24, -1, 37, -3, 31, -14, 29, -17, 19, -24, 11, -23, 4, -16)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="snd_bump" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_77ljf")
+volume_db = 15.0
+
+[node name="snd_damage" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_alpui")
+volume_db = 15.0
+
 [node name="InvincibleTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.2
 one_shot = true
+
+[node name="Hud" parent="." instance=ExtResource("3_v4mv5")]
+
+[node name="HarpoonLauncher" parent="." instance=ExtResource("8_81mnv")]
+unique_name_in_owner = true

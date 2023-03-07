@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp45d3mutbgwh"]
+
+[ext_resource type="Script" path="res://scripts/BackToMenu.gd" id="1_depg4"]
+
+[node name="BackToMenu" type="Node"]
+script = ExtResource("1_depg4")
